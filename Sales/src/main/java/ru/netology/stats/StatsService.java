@@ -42,10 +42,11 @@ public class StatsService {
     }
 
     public int numberMonthMin(long[] sales) {
+        long calculateAverage = calculateAverage(sales);
         int numberMonthMin = 0;
         for (long sale : sales) {
 
-            if (sale <= calculateAverage(sales))
+            if (sale < calculateAverage)
                 numberMonthMin = numberMonthMin + 1;
         }
 
@@ -53,10 +54,11 @@ public class StatsService {
     }
 
     public int numberMonthMax(long[] sales) {
+        long calculateAverage = calculateAverage(sales);
         int numberMonthMax = 0;
         for (long sale : sales) {
 
-            if (sale >= calculateAverage(sales))
+            if (sale > calculateAverage)
                 numberMonthMax = numberMonthMax + 1;
         }
 
@@ -64,7 +66,9 @@ public class StatsService {
     }
 
 
-        }
+
+
+}
 
 
 
